@@ -1,5 +1,7 @@
 package objeto;
 
+import java.util.Scanner;
+
 public class Muniemon {
 	private String nombre;
 	private int vida;
@@ -42,12 +44,27 @@ public class Muniemon {
 		this.defensa = defensa;
 		this.tipo = tipo;
 	}
-	@Override
 	public String toString() {
 		return "greninja [nombre=" + nombre + ", vida=" + vida + ", ataque=" + ataque + ", defensa=" + defensa + ", tipo="
 				+ tipo + "]";
 	}
-	
+	public int atacar(Scanner sc) {
+		int nuevaVida = 0;
+		System.out.println("¿Seguro? 1 > si, 2 > no :");
+		int seguro = sc.nextInt();
+		
+		while(seguro < 2 && seguro > 1) {
+			if(seguro == 1) {
+				defensa -= ataque;
+				vida += defensa;
+				nuevaVida = vida;
+			}else break;
+		}
+		if(nuevaVida == 0) {
+			
+		}
+		return nuevaVida;
+	}
 	
 	
 	
